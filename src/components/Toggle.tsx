@@ -3,7 +3,7 @@ import moon from "../../src/assets/icon-moon.svg";
 import sun from "../../src/assets/icon-sun.svg";
 import { useRestCountriesStore } from "../states/store";
 
-const toggle = () => {
+const Toggle = () => {
   //state
   const darkMode = useRestCountriesStore((store) => store.darkMode);
 
@@ -28,7 +28,7 @@ const toggle = () => {
   );
 };
 
-export default toggle;
+export default Toggle;
 
 const ToggleWrapper = styled.div<{ darkMode: boolean }>`
   display: flex;
@@ -37,9 +37,14 @@ const ToggleWrapper = styled.div<{ darkMode: boolean }>`
   justify-content: center;
   gap: 5px;
 
+  .toggleButton {
+    border: none;
+    background: none;
+  }
+
   .icon {
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
   }
 
   .dark {
