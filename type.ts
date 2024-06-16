@@ -1,4 +1,4 @@
-type countriesData = {
+interface countriesData {
   name: {
     common: "Wallis and Futuna";
     official: "Territory of the Wallis and Futuna Islands";
@@ -23,4 +23,6 @@ type countriesData = {
   languages: {
     fra: "French";
   };
-};
+}
+
+export default countriesData;
