@@ -1,7 +1,12 @@
 import styled from "styled-components";
+import CountriesCards from "../components/CountriesCards";
 
 const Home = () => {
-  return <HomeWrapper>Home</HomeWrapper>;
+  return (
+    <HomeWrapper>
+      <CountriesCards />
+    </HomeWrapper>
+  );
 };
 
 export default Home;

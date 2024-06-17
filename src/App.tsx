@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import { useEffect } from "react";
 import axios from "axios";
 import { useRestCountriesStore } from "./states/store";
+import Home from "./pages/Home";
 
 function App() {
   //setState for fetchountries function
@@ -31,6 +32,7 @@ function App() {
   return (
     <AppWrapper>
       <Header />
+      <Home />
     </AppWrapper>
   );
 }
@@ -42,4 +44,6 @@ const AppWrapper = styled.div`
   min-height: 100vh;
   display: flex;
   background-color: #f2f2f2;
+  flex-direction: column;
+  align-items: center;
 `;
