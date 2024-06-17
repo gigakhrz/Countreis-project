@@ -2,16 +2,24 @@ import styled from "styled-components";
 import Header from "./components/Header";
 import { useEffect } from "react";
 import axios from "axios";
+import { useRestCountriesStore } from "./states/store";
 
 function App() {
+  //setState for fetchountries function
+
+  const setCountriesInfo = useRestCountriesStore(
+    (store) => store.setCountriesInfo
+  );
+
   useEffect(() => {
+    //when website will be open to catch data imediatelly
     const fetchCountries = async () => {
       try {
         const response = await axios.get(
           "https://restcountries.com/v3.1/all?fields=name,nativeName,population,region,subregion,capital,tld,currencies,languages"
         );
-        const data = response.data;
-        console.log(data);
+
+        setCountriesInfo(response.data);
       } catch (error) {
         console.log(error);
       }
@@ -19,6 +27,7 @@ function App() {
 
     fetchCountries();
   }, []);
+
   return (
     <AppWrapper>
       <Header />
