@@ -12,7 +12,7 @@ const CountriesCards = () => {
       {countriesInfo.map((country, index) => {
         return (
           <div key={index} className="card">
-            <img src="" />
+            <img src={country.flags.png} />
 
             <div className="info">
               <h2>{country.name.common}</h2>

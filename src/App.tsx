@@ -17,7 +17,7 @@ function App() {
     const fetchCountries = async () => {
       try {
         const response = await axios.get(
-          "https://restcountries.com/v3.1/all?fields=name,nativeName,population,region,subregion,capital,tld,currencies,languages"
+          "https://restcountries.com/v3.1/all?fields=name,nativeName,population,region,subregion,capital,tld,currencies,languages,flags"
         );
 
         setCountriesInfo(response.data);

@@ -1,27 +1,31 @@
 interface countriesData {
   name: {
-    common: "Wallis and Futuna";
-    official: "Territory of the Wallis and Futuna Islands";
+    common: string;
+    official: string;
     nativeName: {
-      fra: {
-        common: "Wallis et Futuna";
-        official: "Territoire des îles Wallis et Futuna";
+      [key: string]: {
+        common: string;
+        official: string;
       };
     };
   };
-  capital: ["Mata-Utu"];
-  population: 11750;
-  region: "Oceania";
-  subregion: "Polynesia";
-  tld: [".wf"];
+  capital: string[];
+  population: number;
+  region: string;
+  subregion: string;
+  tld: string[];
   currencies: {
-    XPF: {
-      name: "CFP franc";
-      symbol: "₣";
+    [key: string]: {
+      name: string;
+      symbol: string;
     };
   };
   languages: {
-    fra: "French";
+    [key: string]: string;
+  };
+  flags: {
+    png: string;
+    svg: string;
   };
 }
 
