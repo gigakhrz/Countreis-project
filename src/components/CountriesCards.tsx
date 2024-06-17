@@ -12,7 +12,7 @@ const CountriesCards = () => {
       {countriesInfo.map((country, index) => {
         return (
           <div key={index} className="card">
-            <img src={country.flags.png} />
+            <img className="flag" src={country.flags.png} />
 
             <div className="info">
               <h2>{country.name.common}</h2>
@@ -50,32 +50,38 @@ const CardsWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     width: 264px;
     gap: 20px;
     background: white;
+    padding-bottom: 45px;
+
+    .flag {
+      width: 100%;
+    }
 
     .info {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      align-items: start;
       gap: 15px;
+      padding-left: 20px;
 
       h2 {
         font-weight: bold;
-        color: white;
+        color: black;
       }
 
       .about {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: start;
         gap: 7px;
 
         span {
-          color: white;
+          color: black;
         }
         h5 {
           color: #808080;
