@@ -8,7 +8,7 @@ const Header = () => {
   const darkMode = useRestCountriesStore((store) => store.darkMode);
 
   return (
-    <HeaderContainer darkMode={darkMode}>
+    <HeaderContainer $darkMode={darkMode}>
       <p className="title">Where in the world?</p>
       <Toggle />
     </HeaderContainer>
@@ -17,10 +17,10 @@ const Header = () => {
 
 export default Header;
 
-const HeaderContainer = styled.div<{ darkMode: boolean }>`
+const HeaderContainer = styled.div<{ $darkMode: boolean }>`
   width: 100%;
   height: 80px;
-  background-color: ${({ darkMode }) => (darkMode ? "black" : "white")};
+  background-color: ${({ $darkMode }) => ($darkMode ? "black" : "white")};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,6 +29,6 @@ const HeaderContainer = styled.div<{ darkMode: boolean }>`
   .title {
     font-size: 15px;
     font-weight: bold;
-    color: ${(props) => (props.darkMode ? "white" : "black")};
+    color: ${(props) => (props.$darkMode ? "white" : "black")};
   }
 `;

@@ -11,7 +11,7 @@ const Toggle = () => {
   const setDarkMode = useRestCountriesStore((store) => store.setDarkMode);
 
   return (
-    <ToggleWrapper className="selectMode" darkMode={darkMode}>
+    <ToggleWrapper className="selectMode" $darkMode={darkMode}>
       <button
         className="toggleButton"
         onClick={() => setDarkMode(!darkMode)}
@@ -30,7 +30,7 @@ const Toggle = () => {
 
 export default Toggle;
 
-const ToggleWrapper = styled.div<{ darkMode: boolean }>`
+const ToggleWrapper = styled.div<{ $darkMode: boolean }>`
   display: flex;
   width: 84px;
   align-items: center;
@@ -49,6 +49,6 @@ const ToggleWrapper = styled.div<{ darkMode: boolean }>`
 
   .dark {
     font-size: 13px;
-    color: ${(props) => (props.darkMode ? "white" : "black")};
+    color: ${(props) => (props.$darkMode ? "white" : "black")};
   }
 `;
