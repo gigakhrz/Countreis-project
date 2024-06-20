@@ -52,7 +52,7 @@ const CardsWrapper = styled.div<{ $darkMode: boolean }>`
     align-items: start;
     width: 264px;
     gap: 20px;
-    background: ${(props) => (props.$darkMode ? "#414141" : "white")};
+    background: ${(props) => (props.$darkMode ? "#2B3844" : "white")};
     padding-bottom: 45px;
 
     .flag {
