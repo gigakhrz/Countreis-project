@@ -4,11 +4,10 @@ import { useRestCountriesStore } from "../states/store";
 const CountriesCards = () => {
   // countries state where are whole data
   const countriesInfo = useRestCountriesStore((store) => store.countriesInfo);
-
-  console.log(countriesInfo);
+  const darkMode = useRestCountriesStore((store) => store.darkMode);
 
   return (
-    <CardsWrapper>
+    <CardsWrapper $darkMode={darkMode}>
       {countriesInfo.map((country, index) => {
         return (
           <div key={index} className="card">
@@ -19,13 +18,13 @@ const CountriesCards = () => {
 
               <div className="about">
                 <h5>
-                  <span>Population</span>:{country.population}
+                  <span>Population</span>: {country.population}
                 </h5>
                 <h5>
-                  <span>Region</span>:{country.region}
+                  <span>Region</span>: {country.region}
                 </h5>
                 <h5>
-                  <span>Capital</span>:{country.capital}
+                  <span>Capital</span>: {country.capital}
                 </h5>
               </div>
             </div>
@@ -38,7 +37,7 @@ const CountriesCards = () => {
 
 export default CountriesCards;
 
-const CardsWrapper = styled.div`
+const CardsWrapper = styled.div<{ $darkMode: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,7 +52,7 @@ const CardsWrapper = styled.div`
     align-items: start;
     width: 264px;
     gap: 20px;
-    background: white;
+    background: ${(props) => (props.$darkMode ? "#414141" : "white")};
     padding-bottom: 45px;
 
     .flag {
@@ -70,7 +69,7 @@ const CardsWrapper = styled.div`
 
       h2 {
         font-weight: bold;
-        color: black;
+        color: ${(props) => (props.$darkMode ? "white" : "black")};
       }
 
       .about {
@@ -81,10 +80,12 @@ const CardsWrapper = styled.div`
         gap: 7px;
 
         span {
-          color: black;
+          color: ${(props) => (props.$darkMode ? "white" : "#808080")};
+          font-weight: 700;
         }
         h5 {
           color: #808080;
+          font-weight: 400;
         }
       }
     }
